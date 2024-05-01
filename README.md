@@ -10,6 +10,9 @@ Features:
 * A details screen with details of said movies
 * A search screen
 
+## Screenshot
+![screenshot of the Home screen](screenshots/home_screen_2024-05-01.png)
+
 ## Libraries
 
 * Coil
