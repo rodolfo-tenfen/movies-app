@@ -10,4 +10,10 @@ plugins {
 ktlint {
     android.set(true)
     outputColorName.set("RED")
+
+    filter {
+        exclude { element ->
+            element.file.path.contains("generated")
+        }
+    }
 }
