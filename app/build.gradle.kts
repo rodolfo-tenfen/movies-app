@@ -69,7 +69,7 @@ dependencies {
     implementation(libs.moshi)
     implementation(libs.moshi.adapters)
     ksp(libs.moshi.kotlin.codegen)
-    implementation(libs.retrofit2.converter.moshi)
+    implementation(libs.retrofit.converter.moshi)
     implementation(libs.okhttp3.logging.interceptor)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
