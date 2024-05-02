@@ -2,10 +2,20 @@ package tenfen.rodolfo.moviesapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val mineShaft = Color(0xFF333333)
+val cocoaBrown = Color(0xFF2D2521)
+val masala = Color(0xFF453D39)
+val chicago = Color(0xFF5C5652)
+val schooner = Color(0xFF8B8684)
+val cloudy = Color(0xFFA29E9C)
+val nobel = Color(0xFFB9B6B5)
+val mercury = Color(0xFFE8E7E6)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val screenBackground = mineShaft
+val listItemBackground = cocoaBrown
+val listItemBorder = chicago
+val primaryText = mercury
+val secondaryText = cloudy
+val primary = nobel
+val secondary = schooner
+val tertiary = masala
