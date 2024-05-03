@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "tenfen.rodolfo.movieitem"
+    namespace = "tenfen.rodolfo.moviedetails"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -48,7 +48,6 @@ dependencies {
     implementation(project(":domain:movie"))
     implementation(project(":previewdata"))
     implementation(project(":theme"))
-    implementation(project(":feature:moviedetails"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -56,13 +55,8 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.runtime.livedata)
-    implementation(libs.coil)
-    implementation(libs.coil.compose)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    debugImplementation(libs.androidx.compose.ui.tooling.preview)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
