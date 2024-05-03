@@ -1,6 +1,8 @@
 package tenfen.rodolfo.movie.ui.item
 
+import android.content.Context
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
@@ -17,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -25,20 +28,28 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import tenfen.rodolfo.movie.MovieModel
+import tenfen.rodolfo.movie.ui.details.MovieDetailsActivity
 import tenfen.rodolfo.movie.ui.releasedate.ReleaseDate
 import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.onSecondary
-import tenfen.rodolfo.theme.outline
+
+private fun openDetailsScreen(context: Context, movie: MovieModel) {
+    context.startActivity(MovieDetailsActivity.createIntent(context, movie))
+}
 
 @Composable
 fun MovieItem(movie: MovieModel, modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+    val onItemClick = { openDetailsScreen(context, movie) }
+
     Card(
         modifier
             .padding(horizontal = 8.dp, vertical = 4.dp)
             .wrapContentHeight()
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .clickable(onClick = onItemClick),
         elevation = CardDefaults.cardElevation(2.dp),
-        border = BorderStroke(1.dp, outline),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.Top) {
