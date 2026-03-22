@@ -1,10 +1,10 @@
 import java.util.Properties
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("org.jlleitschuh.gradle.ktlint")
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ktlint.gradle)
+    alias(libs.plugins.ksp)
 }
 
 android {
