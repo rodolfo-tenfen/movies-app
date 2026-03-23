@@ -11,8 +11,9 @@ interface ImageLoadingConfigurationRepository {
 class CachedImageLoadingConfigurationRepository(
     private val tmdbService: TmdbService,
     private val cache: ValueCache<ImageLoadingConfiguration>,
-    private val imageLoadingConfigurationFactory:
-        (ImageConfigurationResponse) -> ImageLoadingConfiguration
+    private val imageLoadingConfigurationFactory: (
+        ImageConfigurationResponse
+    ) -> ImageLoadingConfiguration
 ) : ImageLoadingConfigurationRepository {
 
     override suspend fun getImageLoadingConfiguration() =
