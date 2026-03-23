@@ -1,13 +1,10 @@
-[**.kt]
-# noinspection EditorConfigKeyCorrectness
-ktlint_code_style=android_studio
-# noinspection EditorConfigKeyCorrectness
-ktlint_function_naming_ignore_when_annotated_with=Composable
-max_line_length=100
-# noinspection EditorConfigKeyCorrectness
-ktlint_function_signature_body_expression_wrapping=multiline
+[*.{kt,kts}]
+ktlint_code_style = android_studio
+max_line_length = 100
+ktlint_chain_method_rule_force_multiline_when_chain_operator_count_greater_or_equal_than = unset
+ktlint_standard_function-signature = disabled
+ktlint_function_naming_ignore_when_annotated_with = Composable
+ktlint_standard_multiline-if-else = disabled
 
-[**.kts]
-# noinspection EditorConfigKeyCorrectness
-ktlint_code_style=android_studio
-max_line_length=100
+[**/test/**/*.kt]
+ktlint_standard_max-line-length = disabled
