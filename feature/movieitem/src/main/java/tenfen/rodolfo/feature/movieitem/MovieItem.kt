@@ -32,9 +32,10 @@ import java.time.format.DateTimeFormatter
 import tenfen.rodolfo.domain.movie.entity.Movie
 import tenfen.rodolfo.movieitem.R
 import tenfen.rodolfo.previewdata.previewMovie
-import tenfen.rodolfo.theme.listItemBorder
-import tenfen.rodolfo.theme.secondaryText
+import tenfen.rodolfo.theme.onSecondary
+import tenfen.rodolfo.theme.outline
 
+// FIXME
 @Composable
 private fun provideMovieItemViewModel(movie: Movie) = MovieItemViewModel(movie)
 
@@ -49,7 +50,7 @@ fun MovieItem(movie: Movie = previewMovie) {
             .wrapContentHeight()
             .fillMaxWidth(),
         elevation = CardDefaults.cardElevation(2.dp),
-        border = BorderStroke(1.dp, listItemBorder),
+        border = BorderStroke(1.dp, outline),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.Top) {
@@ -137,7 +138,7 @@ private fun ReleaseDate(viewModel: MovieItemViewModel) {
 
     Text(
         text = dateFormatter.format(viewModel.movie.releaseDate),
-        color = secondaryText,
+        color = onSecondary,
         fontSize = 12.sp,
         maxLines = 1
     )
