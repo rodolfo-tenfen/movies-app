@@ -28,39 +28,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import java.net.URI
-import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import tenfen.rodolfo.domain.movie.entity.Genre
 import tenfen.rodolfo.domain.movie.entity.Movie
 import tenfen.rodolfo.movieitem.R
+import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.listItemBorder
 import tenfen.rodolfo.theme.secondaryText
 
 @Composable
 private fun provideMovieItemViewModel(movie: Movie) = MovieItemViewModel(movie)
-
-private val genre1 = object : Genre {
-    override val name = "horror"
-}
-
-private val genre2 = object : Genre {
-    override val name = "comedy"
-}
-
-val previewMovie =
-    object : Movie {
-        override val title = "Title"
-        override val originalTitle = "Título"
-        override val backdropUrl = URI("http://example.com/backdrop")
-        override val posterUrl = URI("http://example.com/poster")
-        override val overview =
-            "This is the overview of the movie. It might be a very long string that will " +
-                "need to be ellipsized: Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-                "Mauris magna nunc, fringilla interdum posuere in, tincidunt vel risus."
-        override val releaseDate = LocalDate.now()
-        override val genres = listOf(genre1, genre2)
-    }
 
 @Preview
 @Composable
