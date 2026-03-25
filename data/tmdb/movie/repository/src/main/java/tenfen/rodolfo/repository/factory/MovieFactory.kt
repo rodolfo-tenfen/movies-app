@@ -5,6 +5,7 @@ import java.time.LocalDate
 import tenfen.rodolfo.domain.movie.entity.Genre
 import tenfen.rodolfo.domain.movie.entity.Movie as MovieEntity
 import tenfen.rodolfo.repository.port.ConfigurationDataSource
+import tenfen.rodolfo.repository.port.ConfigurationDataSource.ConfigurationData.ImageSizeParameterData
 import tenfen.rodolfo.repository.port.GenreDataSource
 import tenfen.rodolfo.repository.port.MovieDataSource
 
@@ -20,7 +21,7 @@ class MovieFactory {
             originalTitle = originalTitle,
             overview = overview,
             backdropUrl = with(imageLoadingConfiguration) {
-                createImageUrl(endpoint, backdropSizeParameter, backdropPath)
+                backdropPath?.let { createImageUrl(endpoint, backdropSizeParameter, path = it) }
             },
             posterUrl = with(imageLoadingConfiguration) {
                 createImageUrl(endpoint, posterSizeParameter, posterPath)
@@ -32,7 +33,7 @@ class MovieFactory {
 
     private fun createImageUrl(
         endpoint: URI,
-        sizeParameter: ConfigurationDataSource.ConfigurationData.ImageSizeParameterData,
+        sizeParameter: ImageSizeParameterData,
         path: URI
     ) = URI("$endpoint${sizeParameter.value}$path")
 
@@ -40,7 +41,7 @@ class MovieFactory {
         override val title: String,
         override val originalTitle: String,
         override val overview: String,
-        override val backdropUrl: URI,
+        override val backdropUrl: URI?,
         override val posterUrl: URI,
         override val releaseDate: LocalDate,
         override val genres: List<Genre>
