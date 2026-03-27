@@ -29,4 +29,6 @@ include(":theme")
 include(":previewdata")
 
 include(":feature:home")
+
+include(":feature:movie:model")
 include(":feature:movieitem")
