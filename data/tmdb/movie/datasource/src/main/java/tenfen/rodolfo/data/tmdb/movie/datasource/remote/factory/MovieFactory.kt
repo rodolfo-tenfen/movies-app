@@ -14,7 +14,7 @@ class MovieFactory(private val dateFormatter: DateTimeFormatter) {
             title = title,
             originalTitle = originalTitle,
             overview = overview,
-            backdropPath = URI(backdropPath),
+            backdropPath = backdropPath?.let(::URI),
             posterPath = URI(posterPath),
             releaseDate = LocalDate.parse(releaseDate, dateFormatter),
             genreIds = genreIds
@@ -23,7 +23,7 @@ class MovieFactory(private val dateFormatter: DateTimeFormatter) {
 
     private data class Output(
         override val id: Int,
-        override val backdropPath: URI,
+        override val backdropPath: URI?,
         override val genreIds: List<Int>,
         override val title: String,
         override val originalTitle: String,

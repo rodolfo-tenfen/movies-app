@@ -6,7 +6,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class MovieBody(
     val id: Int,
-    @Json(name = "backdrop_path") val backdropPath: String,
+    @Json(name = "backdrop_path") val backdropPath: String?,
     @Json(name = "genre_ids") val genreIds: List<Int>,
     val title: String,
     @Json(name = "original_title") val originalTitle: String,

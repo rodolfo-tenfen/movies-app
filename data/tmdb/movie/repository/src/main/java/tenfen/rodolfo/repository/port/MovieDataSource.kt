@@ -7,7 +7,7 @@ interface MovieDataSource {
 
     interface MovieData {
         val id: Int
-        val backdropPath: URI
+        val backdropPath: URI?
         val genreIds: List<Int>
         val title: String
         val originalTitle: String

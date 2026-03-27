@@ -16,8 +16,11 @@ private val moviesColorScheme =
         primary = primary,
         secondary = secondary,
         tertiary = tertiary,
-        background = screenBackground,
-        surface = listItemBackground
+        background = background,
+        surface = surface,
+        outline = outline,
+        onSurface = onSurface,
+        onSecondary = onSecondary
     )
 
 @Composable
@@ -34,8 +37,6 @@ fun MoviesAppTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = moviesColorScheme,
         typography = Typography,
-        content = {
-            ProvideTextStyle(value = TextStyle(color = primaryText), content = content)
-        }
+        content = content
     )
 }

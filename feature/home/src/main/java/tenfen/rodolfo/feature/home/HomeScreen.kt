@@ -22,8 +22,8 @@ import tenfen.rodolfo.data.tmdb.movie.datasource.remote.service.GenreRetrofitSer
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.service.MovieRetrofitService
 import tenfen.rodolfo.domain.movie.entity.Movie
 import tenfen.rodolfo.feature.movieitem.MovieItem
-import tenfen.rodolfo.feature.movieitem.previewMovie
 import tenfen.rodolfo.home.BuildConfig
+import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.repository.MovieRepository
 import tenfen.rodolfo.repository.factory.MovieFactory as MovieEntityFactory
 import tenfen.rodolfo.repository.store.CacheFirstConfigurationStore

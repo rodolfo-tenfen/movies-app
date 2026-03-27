@@ -28,39 +28,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import java.net.URI
-import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import tenfen.rodolfo.domain.movie.entity.Genre
 import tenfen.rodolfo.domain.movie.entity.Movie
 import tenfen.rodolfo.movieitem.R
-import tenfen.rodolfo.theme.listItemBorder
-import tenfen.rodolfo.theme.secondaryText
+import tenfen.rodolfo.previewdata.previewMovie
+import tenfen.rodolfo.theme.onSecondary
+import tenfen.rodolfo.theme.outline
 
+// FIXME
 @Composable
 private fun provideMovieItemViewModel(movie: Movie) = MovieItemViewModel(movie)
-
-private val genre1 = object : Genre {
-    override val name = "horror"
-}
-
-private val genre2 = object : Genre {
-    override val name = "comedy"
-}
-
-val previewMovie =
-    object : Movie {
-        override val title = "Title"
-        override val originalTitle = "Título"
-        override val backdropUrl = URI("http://example.com/backdrop")
-        override val posterUrl = URI("http://example.com/poster")
-        override val overview =
-            "This is the overview of the movie. It might be a very long string that will " +
-                "need to be ellipsized: Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-                "Mauris magna nunc, fringilla interdum posuere in, tincidunt vel risus."
-        override val releaseDate = LocalDate.now()
-        override val genres = listOf(genre1, genre2)
-    }
 
 @Preview
 @Composable
@@ -73,7 +50,7 @@ fun MovieItem(movie: Movie = previewMovie) {
             .wrapContentHeight()
             .fillMaxWidth(),
         elevation = CardDefaults.cardElevation(2.dp),
-        border = BorderStroke(1.dp, listItemBorder),
+        border = BorderStroke(1.dp, outline),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.Top) {
@@ -161,7 +138,7 @@ private fun ReleaseDate(viewModel: MovieItemViewModel) {
 
     Text(
         text = dateFormatter.format(viewModel.movie.releaseDate),
-        color = secondaryText,
+        color = onSecondary,
         fontSize = 12.sp,
         maxLines = 1
     )

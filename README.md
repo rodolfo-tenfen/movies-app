@@ -11,6 +11,7 @@ Features:
 * A search screen
 
 ## Screenshot
+
 ![screenshot of the Home screen](screenshots/home_screen_2024-05-01.png)
 
 ## Libraries

@@ -55,8 +55,9 @@ dependencies {
     implementation(project(":data:tmdb:movie:repository"))
     implementation(project(":data:tmdb"))
     implementation(project(":domain:movie"))
-    implementation(project(":feature:movieitem"))
+    implementation(project(":previewdata"))
     implementation(project(":theme"))
+    implementation(project(":feature:movieitem"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

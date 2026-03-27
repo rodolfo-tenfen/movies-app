@@ -11,11 +11,11 @@ val cloudy = Color(0xFFA29E9C)
 val nobel = Color(0xFFB9B6B5)
 val mercury = Color(0xFFE8E7E6)
 
-val screenBackground = mineShaft
-val listItemBackground = cocoaBrown
-val listItemBorder = chicago
-val primaryText = mercury
-val secondaryText = cloudy
+val background = mineShaft
+val surface = cocoaBrown
+val outline = chicago
+val onSurface = mercury
+val onSecondary = cloudy
 val primary = nobel
 val secondary = schooner
 val tertiary = masala
