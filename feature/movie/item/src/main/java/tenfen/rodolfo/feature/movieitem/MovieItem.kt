@@ -35,17 +35,10 @@ import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.onSecondary
 import tenfen.rodolfo.theme.outline
 
-// FIXME
 @Composable
-private fun provideMovieItemViewModel(movie: Movie) = MovieItemViewModel(movie)
-
-@Preview
-@Composable
-fun MovieItem(movie: Movie = previewMovie) {
-    val viewModel = provideMovieItemViewModel(movie)
-
+fun MovieItem(movie: Movie, modifier: Modifier = Modifier) {
     Card(
-        Modifier
+        modifier
             .padding(horizontal = 8.dp, vertical = 4.dp)
             .wrapContentHeight()
             .fillMaxWidth(),
@@ -54,7 +47,7 @@ fun MovieItem(movie: Movie = previewMovie) {
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Row(modifier = Modifier.fillMaxSize(), verticalAlignment = Alignment.Top) {
-            PosterImage(viewModel)
+            PosterImage(movie)
 
             Column(
                 Modifier
@@ -62,7 +55,7 @@ fun MovieItem(movie: Movie = previewMovie) {
                     .padding(vertical = 8.dp)
                     .padding(end = 8.dp)
             ) {
-                Title(viewModel)
+                Title(movie)
 
                 Row(
                     Modifier
@@ -71,13 +64,14 @@ fun MovieItem(movie: Movie = previewMovie) {
                         .padding(bottom = 8.dp),
                     verticalAlignment = Alignment.Bottom
                 ) {
-                    OriginalTitle(viewModel)
+                    if (movie.title != movie.originalTitle)
+                        OriginalTitle(movie)
 
-                    ReleaseDate(viewModel)
+                    ReleaseDate(movie)
                 }
 
                 Text(
-                    text = viewModel.movie.overview,
+                    text = movie.overview,
                     Modifier.padding(bottom = 8.dp),
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 3
@@ -88,9 +82,9 @@ fun MovieItem(movie: Movie = previewMovie) {
 }
 
 @Composable
-private fun PosterImage(viewModel: MovieItemViewModel) {
+private fun PosterImage(movie: Movie) {
     AsyncImage(
-        model = viewModel.movie.posterUrl.toString(),
+        model = movie.posterUrl.toString(),
         contentDescription = null,
         Modifier
             .padding(vertical = 8.dp, horizontal = 8.dp)
@@ -103,9 +97,9 @@ private fun PosterImage(viewModel: MovieItemViewModel) {
 }
 
 @Composable
-private fun Title(viewModel: MovieItemViewModel) {
+private fun Title(movie: Movie) {
     Text(
-        text = viewModel.movie.title,
+        text = movie.title,
         Modifier
             .fillMaxWidth()
             .wrapContentHeight()
@@ -118,26 +112,24 @@ private fun Title(viewModel: MovieItemViewModel) {
 }
 
 @Composable
-private fun RowScope.OriginalTitle(viewModel: MovieItemViewModel) {
-    if (viewModel.isOriginalTitleVisible) {
-        Text(
-            text = viewModel.movie.originalTitle,
-            Modifier
-                .weight(1f, fill = false)
-                .padding(end = 8.dp),
-            overflow = TextOverflow.Ellipsis,
-            maxLines = 1,
-            fontWeight = FontWeight.Bold
-        )
-    }
+private fun RowScope.OriginalTitle(movie: Movie) {
+    Text(
+        text = movie.originalTitle,
+        Modifier
+            .weight(1f, fill = false)
+            .padding(end = 8.dp),
+        overflow = TextOverflow.Ellipsis,
+        maxLines = 1,
+        fontWeight = FontWeight.Bold
+    )
 }
 
 @Composable
-private fun ReleaseDate(viewModel: MovieItemViewModel) {
+private fun ReleaseDate(movie: Movie) {
     val dateFormatter by remember { mutableStateOf(DateTimeFormatter.ofPattern("MMMM dd, yyyy")) }
 
     Text(
-        text = dateFormatter.format(viewModel.movie.releaseDate),
+        text = dateFormatter.format(movie.releaseDate),
         color = onSecondary,
         fontSize = 12.sp,
         maxLines = 1
