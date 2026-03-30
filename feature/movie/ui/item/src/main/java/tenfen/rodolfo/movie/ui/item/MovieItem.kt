@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -87,7 +86,7 @@ private fun PosterImage(movie: Movie) {
         contentDescription = null,
         Modifier
             .padding(vertical = 8.dp, horizontal = 8.dp)
-            .sizeIn(minWidth = 99.dp, maxWidth = 99.dp)
+            .fillMaxWidth(fraction = 3 / 10f)
             .fillMaxHeight(),
         contentScale = ContentScale.FillWidth,
         alignment = Alignment.TopCenter,
@@ -101,8 +100,7 @@ private fun Title(movie: Movie) {
         text = movie.title,
         Modifier
             .fillMaxWidth()
-            .wrapContentHeight()
-            .padding(bottom = 8.dp),
+            .wrapContentHeight(),
         overflow = TextOverflow.Ellipsis,
         maxLines = 1,
         fontSize = 18.sp,
