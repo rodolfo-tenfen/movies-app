@@ -135,3 +135,9 @@ private fun ReleaseDate(movie: Movie) {
         maxLines = 1
     )
 }
+
+@Preview
+@Composable
+private fun MovieItemPreview() {
+    MovieItem(previewMovie)
+}
