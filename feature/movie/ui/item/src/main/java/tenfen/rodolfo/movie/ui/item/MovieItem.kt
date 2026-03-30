@@ -24,11 +24,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import java.time.format.DateTimeFormatter
 import tenfen.rodolfo.domain.movie.entity.Movie
+import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.onSecondary
 import tenfen.rodolfo.theme.outline
 
@@ -131,4 +133,10 @@ private fun ReleaseDate(movie: Movie) {
         fontSize = 12.sp,
         maxLines = 1
     )
+}
+
+@Preview
+@Composable
+private fun MovieItemPreview() {
+    MovieItem(previewMovie)
 }
