@@ -37,7 +37,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain:movie"))
+    api(project(":domain:movie"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

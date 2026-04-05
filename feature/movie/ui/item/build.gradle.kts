@@ -45,9 +45,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain:movie"))
     implementation(project(":previewdata"))
     implementation(project(":theme"))
+    api(project(":feature:movie:model"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

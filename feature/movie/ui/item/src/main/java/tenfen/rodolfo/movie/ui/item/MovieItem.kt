@@ -28,13 +28,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import java.time.format.DateTimeFormatter
-import tenfen.rodolfo.domain.movie.entity.Movie
+import tenfen.rodolfo.movie.MovieModel
 import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.onSecondary
 import tenfen.rodolfo.theme.outline
 
 @Composable
-fun MovieItem(movie: Movie, modifier: Modifier = Modifier) {
+fun MovieItem(movie: MovieModel, modifier: Modifier = Modifier) {
     Card(
         modifier
             .padding(horizontal = 8.dp, vertical = 4.dp)
@@ -80,7 +80,7 @@ fun MovieItem(movie: Movie, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun PosterImage(movie: Movie) {
+private fun PosterImage(movie: MovieModel) {
     AsyncImage(
         model = movie.posterUrl.toString(),
         contentDescription = null,
@@ -95,7 +95,7 @@ private fun PosterImage(movie: Movie) {
 }
 
 @Composable
-private fun Title(movie: Movie) {
+private fun Title(movie: MovieModel) {
     Text(
         text = movie.title,
         Modifier
@@ -109,7 +109,7 @@ private fun Title(movie: Movie) {
 }
 
 @Composable
-private fun RowScope.OriginalTitle(movie: Movie) {
+private fun RowScope.OriginalTitle(movie: MovieModel) {
     Text(
         text = movie.originalTitle,
         Modifier
@@ -122,7 +122,7 @@ private fun RowScope.OriginalTitle(movie: Movie) {
 }
 
 @Composable
-private fun ReleaseDate(movie: Movie) {
+private fun ReleaseDate(movie: MovieModel) {
     val dateFormatter by remember { mutableStateOf(DateTimeFormatter.ofPattern("MMMM dd, yyyy")) }
 
     Text(
