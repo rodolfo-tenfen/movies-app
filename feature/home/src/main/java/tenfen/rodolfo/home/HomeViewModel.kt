@@ -1,4 +1,4 @@
-package tenfen.rodolfo.feature.home
+package tenfen.rodolfo.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

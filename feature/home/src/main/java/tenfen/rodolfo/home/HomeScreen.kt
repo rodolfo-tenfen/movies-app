@@ -1,4 +1,4 @@
-package tenfen.rodolfo.feature.home
+package tenfen.rodolfo.home
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
