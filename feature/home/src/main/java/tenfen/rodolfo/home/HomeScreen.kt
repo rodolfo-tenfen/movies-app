@@ -21,8 +21,8 @@ import tenfen.rodolfo.data.tmdb.movie.datasource.remote.factory.MovieFactory as 
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.service.GenreRetrofitService
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.service.MovieRetrofitService
 import tenfen.rodolfo.domain.movie.entity.Movie
-import tenfen.rodolfo.feature.movieitem.MovieItem
 import tenfen.rodolfo.home.BuildConfig
+import tenfen.rodolfo.movie.ui.item.MovieItem
 import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.repository.MovieRepository
 import tenfen.rodolfo.repository.factory.MovieFactory as MovieEntityFactory

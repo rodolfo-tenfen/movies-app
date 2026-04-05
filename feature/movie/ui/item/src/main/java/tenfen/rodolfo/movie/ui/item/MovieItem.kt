@@ -1,4 +1,4 @@
-package tenfen.rodolfo.feature.movieitem
+package tenfen.rodolfo.movie.ui.item
 
 import android.content.Context
 import androidx.compose.foundation.BorderStroke

@@ -57,7 +57,7 @@ dependencies {
     implementation(project(":domain:movie"))
     implementation(project(":previewdata"))
     implementation(project(":theme"))
-    implementation(project(":feature:movie:item"))
+    implementation(project(":feature:movie:ui:item"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
