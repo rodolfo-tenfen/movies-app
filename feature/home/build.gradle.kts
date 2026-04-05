@@ -54,7 +54,6 @@ dependencies {
     implementation(project(":data:tmdb:movie:datasource"))
     implementation(project(":data:tmdb:movie:repository"))
     implementation(project(":data:tmdb"))
-    implementation(project(":domain:movie"))
     implementation(project(":previewdata"))
     implementation(project(":theme"))
     implementation(project(":feature:movie:ui:item"))

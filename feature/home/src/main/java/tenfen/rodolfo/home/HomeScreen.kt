@@ -20,8 +20,7 @@ import tenfen.rodolfo.data.tmdb.movie.datasource.remote.MovieRetrofitDataSource
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.factory.MovieFactory as MovieDataFactory
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.service.GenreRetrofitService
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.service.MovieRetrofitService
-import tenfen.rodolfo.domain.movie.entity.Movie
-import tenfen.rodolfo.home.BuildConfig
+import tenfen.rodolfo.movie.MovieModel
 import tenfen.rodolfo.movie.ui.item.MovieItem
 import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.repository.MovieRepository
@@ -65,7 +64,7 @@ fun HomeScreen(viewModel: HomeViewModel = provideHomeViewModel()) {
 
 @Preview
 @Composable
-fun PopularMovies(movies: List<Movie> = listOf(previewMovie)) {
+fun PopularMovies(movies: List<MovieModel> = listOf(previewMovie)) {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(items = movies) {
             MovieItem(movie = it)
