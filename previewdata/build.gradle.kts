@@ -45,8 +45,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain:movie"))
     implementation(project(":theme"))
+    implementation(project(":feature:movie:model"))
 
     implementation(libs.androidx.compose.ui)
 }
