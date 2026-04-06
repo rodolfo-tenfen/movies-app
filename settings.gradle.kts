@@ -29,4 +29,7 @@ include(":theme")
 include(":previewdata")
 
 include(":feature:home")
-include(":feature:movieitem")
+
+include(":feature:movie:model")
+include(":feature:movie:ui")
+include(":feature:movie:ui:item")

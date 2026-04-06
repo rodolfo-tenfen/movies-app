@@ -1,5 +1,3 @@
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -9,15 +7,13 @@ plugins {
 }
 
 android {
-    namespace = "tenfen.rodolfo.home"
+    namespace = "tenfen.rodolfo.movie.ui"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField("String", "TMDB_API_KEY", "\"${findTmdbApiKey().orEmpty()}\"")
     }
 
     buildTypes {
@@ -41,7 +37,6 @@ android {
 
     buildFeatures {
         compose = true
-        buildConfig = true
     }
 
     composeOptions {
@@ -50,35 +45,21 @@ android {
 }
 
 dependencies {
-    implementation(project(":data:tmdb:configuration:datasource"))
-    implementation(project(":data:tmdb:movie:datasource"))
-    implementation(project(":data:tmdb:movie:repository"))
-    implementation(project(":data:tmdb"))
-    implementation(project(":domain:movie"))
     implementation(project(":previewdata"))
     implementation(project(":theme"))
-    implementation(project(":feature:movie:ui:item"))
+    api(project(":feature:movie:model"))
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.material)
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.coil)
+    implementation(libs.coil.compose)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.tooling.preview)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-}
-
-fun findTmdbApiKey(): String? = with(Properties()) {
-    load(project.rootProject.file("local.properties").inputStream())
-    getProperty("TMDB_API_KEY")
 }

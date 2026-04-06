@@ -3,6 +3,7 @@ package tenfen.rodolfo.repository.port
 import java.net.URI
 
 interface ConfigurationDataSource {
+
     interface ConfigurationData {
         val endpoint: URI
         val posterSizeParameter: ImageSizeParameterData

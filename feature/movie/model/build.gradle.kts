@@ -1,13 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.parcelize)
 
     alias(libs.plugins.ktlint.gradle)
 }
 
 android {
-    namespace = "tenfen.rodolfo.previewdata"
+    namespace = "tenfen.rodolfo.movie"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -34,19 +34,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
-    }
 }
 
 dependencies {
-    implementation(project(":theme"))
-    implementation(project(":feature:movie:model"))
+    api(project(":domain:movie"))
 
-    implementation(libs.androidx.compose.ui)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
 }
