@@ -48,6 +48,7 @@ dependencies {
     implementation(project(":previewdata"))
     implementation(project(":theme"))
     api(project(":feature:movie:model"))
+    implementation(project(":feature:movie:ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

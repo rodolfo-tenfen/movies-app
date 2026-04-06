@@ -14,9 +14,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -27,8 +24,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import java.time.format.DateTimeFormatter
 import tenfen.rodolfo.movie.MovieModel
+import tenfen.rodolfo.movie.ui.releasedate.ReleaseDate
 import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.onSecondary
 import tenfen.rodolfo.theme.outline
@@ -65,7 +62,7 @@ fun MovieItem(movie: MovieModel, modifier: Modifier = Modifier) {
                     if (movie.title != movie.originalTitle)
                         OriginalTitle(movie)
 
-                    ReleaseDate(movie)
+                    ReleaseDate(movie, color = onSecondary, maxLines = 1)
                 }
 
                 Text(
@@ -118,18 +115,6 @@ private fun RowScope.OriginalTitle(movie: MovieModel) {
         overflow = TextOverflow.Ellipsis,
         maxLines = 1,
         fontWeight = FontWeight.Bold
-    )
-}
-
-@Composable
-private fun ReleaseDate(movie: MovieModel) {
-    val dateFormatter by remember { mutableStateOf(DateTimeFormatter.ofPattern("MMMM dd, yyyy")) }
-
-    Text(
-        text = dateFormatter.format(movie.releaseDate),
-        color = onSecondary,
-        fontSize = 12.sp,
-        maxLines = 1
     )
 }
 
