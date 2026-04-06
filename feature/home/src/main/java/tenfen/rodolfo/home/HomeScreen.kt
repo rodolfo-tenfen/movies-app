@@ -1,4 +1,4 @@
-package tenfen.rodolfo.feature.home
+package tenfen.rodolfo.home
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,9 +20,8 @@ import tenfen.rodolfo.data.tmdb.movie.datasource.remote.MovieRetrofitDataSource
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.factory.MovieFactory as MovieDataFactory
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.service.GenreRetrofitService
 import tenfen.rodolfo.data.tmdb.movie.datasource.remote.service.MovieRetrofitService
-import tenfen.rodolfo.feature.movieitem.MovieItem
-import tenfen.rodolfo.home.BuildConfig
 import tenfen.rodolfo.movie.MovieModel
+import tenfen.rodolfo.movie.ui.item.MovieItem
 import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.repository.MovieRepository
 import tenfen.rodolfo.repository.factory.MovieFactory as MovieEntityFactory

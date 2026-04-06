@@ -1,4 +1,4 @@
-package tenfen.rodolfo.feature.home
+package tenfen.rodolfo.home
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
