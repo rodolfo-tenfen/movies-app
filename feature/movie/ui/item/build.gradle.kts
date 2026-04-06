@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "tenfen.rodolfo.movieitem"
+    namespace = "tenfen.rodolfo.movie.ui.item"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {

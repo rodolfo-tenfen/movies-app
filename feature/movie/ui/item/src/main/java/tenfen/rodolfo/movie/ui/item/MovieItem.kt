@@ -1,4 +1,4 @@
-package tenfen.rodolfo.feature.movieitem
+package tenfen.rodolfo.movie.ui.item
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column
@@ -24,14 +24,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import java.time.format.DateTimeFormatter
 import tenfen.rodolfo.domain.movie.entity.Movie
-import tenfen.rodolfo.movieitem.R
-import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.onSecondary
 import tenfen.rodolfo.theme.outline
 

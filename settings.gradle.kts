@@ -32,4 +32,4 @@ include(":feature:home")
 
 include(":feature:movie:model")
 include(":feature:movie:ui")
-include(":feature:movie:item")
+include(":feature:movie:ui:item")
