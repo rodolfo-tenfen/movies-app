@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "tenfen.rodolfo.moviedetails"
+    namespace = "tenfen.rodolfo.movie.ui.details"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -45,9 +45,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain:movie"))
     implementation(project(":previewdata"))
     implementation(project(":theme"))
+//    implementation(project(":feature:movie:model"))
+    implementation(project(":feature:movie:ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

@@ -27,8 +27,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import tenfen.rodolfo.feature.moviedetails.MovieDetailsActivity
 import tenfen.rodolfo.movie.MovieModel
+import tenfen.rodolfo.movie.ui.details.MovieDetailsActivity
 import tenfen.rodolfo.movie.ui.releasedate.ReleaseDate
 import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.onSecondary
