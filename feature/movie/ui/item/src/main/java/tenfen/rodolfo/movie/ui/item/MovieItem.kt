@@ -31,18 +31,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import java.time.format.DateTimeFormatter
-import tenfen.rodolfo.domain.movie.entity.Movie
 import tenfen.rodolfo.feature.moviedetails.MovieDetailsActivity
 import tenfen.rodolfo.movieitem.R
+import tenfen.rodolfo.movie.MovieModel
 import tenfen.rodolfo.previewdata.previewMovie
 import tenfen.rodolfo.theme.onSecondary
 
-private fun openDetailsScreen(context: Context, movie: Movie) {
+private fun openDetailsScreen(context: Context, movie: MovieModel) {
     context.startActivity(MovieDetailsActivity.createIntent(context, movie))
 }
 
 @Composable
-fun MovieItem(movie: Movie, modifier: Modifier = Modifier) {
+fun MovieItem(movie: MovieModel, modifier: Modifier = Modifier) {
     val context = LocalContext.current
     val onItemClick = { openDetailsScreen(context, movie) }
 
@@ -92,7 +92,7 @@ fun MovieItem(movie: Movie, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun PosterImage(movie: Movie) {
+private fun PosterImage(movie: MovieModel) {
     AsyncImage(
         model = movie.posterUrl.toString(),
         contentDescription = null,
@@ -107,7 +107,7 @@ private fun PosterImage(movie: Movie) {
 }
 
 @Composable
-private fun Title(movie: Movie) {
+private fun Title(movie: MovieModel) {
     Text(
         text = movie.title,
         Modifier
@@ -121,7 +121,7 @@ private fun Title(movie: Movie) {
 }
 
 @Composable
-private fun RowScope.OriginalTitle(movie: Movie) {
+private fun RowScope.OriginalTitle(movie: MovieModel) {
     Text(
         text = movie.originalTitle,
         Modifier
